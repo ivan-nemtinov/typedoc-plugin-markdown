@@ -25,7 +25,7 @@ ___
 {{#if (and  
         (ne title "References")
         (ne title "Globals"))}}
-{{#replace "Variables" "Globals"}}{{heading 2}} {{title}}{{/replace}}
+{{#replace "Type aliases" "Types"}}{{#replace "Variables" "Globals"}}{{heading 2}} {{title}}{{/replace}}{{/replace}}
 
 {{#each children}}
 
