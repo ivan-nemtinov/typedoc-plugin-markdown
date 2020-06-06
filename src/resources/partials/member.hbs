@@ -1,6 +1,7 @@
 {{#if name}}
 
-{{heading 3}} {{#ifNamedAnchors}}<a id="{{anchor}}" name="{{this.anchor}}"></a> {{/ifNamedAnchors}}{{{ memberTitle }}}
+{{heading 3}} {{#ifNamedAnchors}}<a id="{{anchor}}" name="{{this.anchor}}"></a> {{/ifNamedAnchors}}{{#replace "`Const`" ""}}{{{ memberTitle }}}{{/replace}}
+
 
 {{/if}}
 
