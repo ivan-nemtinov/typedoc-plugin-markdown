@@ -27,7 +27,6 @@
 npm-debug.log
 testem.log
 /typings
-.npmrc
 
 # e2e
 /e2e/*.js

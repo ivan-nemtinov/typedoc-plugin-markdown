@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "lint": "tslint --project ./tsconfig.json",
-    "build": "rm -rf dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
+    "build": "rimraf dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
     "prepublishOnly": "npm run test",
     "pretest": "npm run lint && npm run build",
     "test": "jest",
@@ -45,6 +45,7 @@
     "@types/node": "^14.0.9",
     "copyfiles": "^2.3.0",
     "jest": "^26.0.1",
+    "rimraf": "^3.0.2",
     "ts-jest": "^26.1.0",
     "tslint": "^6.1.2",
     "typedoc": "0.17.7",
