@@ -1,0 +1,40 @@
+{{#if groups}}
+
+{{heading 2}} Index
+
+{{#each groups}}
+
+{{#if categories}}
+
+{{#each categories}}
+
+{{#if (or 
+    (ne title "Classes")
+    (ne title "Type aliases")
+    (ne title "References"))}}
+{{#replace "Type aliases" "Types"}}{{#replace "Variables" "Globals"}}{{heading 3}} {{title}} {{../title}}{{/replace}}{{/replace}}
+
+{{#each children}}
+* [{{{name}}}]({{relativeURL url}})
+{{/each}}
+
+{{/if}}
+
+{{/each}}
+
+{{else}}
+
+{{#if (ne title "References")}}
+{{#replace "Type aliases" "Types"}}{{#replace "Variables" "Globals"}}{{heading 3}} {{title}}{{/replace}}{{/replace}}
+
+{{#each children}}
+* [{{{name}}}]({{relativeURL url}})
+{{/each}}
+
+{{/if}}
+
+{{/if}}
+
+{{/each}}
+
+{{/if}}
