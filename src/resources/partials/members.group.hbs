@@ -23,6 +23,7 @@ ___
 {{else}}
 
 {{#if (and  
+        (ne title "Properties")
         (ne title "References")
         (ne title "Globals"))}}
 {{#replace "Type aliases" "Types"}}{{#replace "Variables" "Globals"}}{{heading 2}} {{title}}{{/replace}}{{/replace}}
