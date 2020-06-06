@@ -3,9 +3,6 @@
   "version": "2.3.1",
   "description": "A plugin for TypeDoc that enables TypeScript API documentation to be generated in Markdown.",
   "main": "dist/index.js",
-  "files": [
-    "dist/"
-  ],
   "scripts": {
     "lint": "tslint --project ./tsconfig.json",
     "build": "rm -rf dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
@@ -16,7 +13,8 @@
     "fixtures": "rm -rf ./test/fixtures && node ./tasks/fixtures.js",
     "examples": "npm run build && rm -rf out && node ./tasks/link-plugin.js && npm run examples:html && npm run examples:md",
     "examples:html": "typedoc --tsconfig ./test/stubs/tsconfig.json --options ./test/options.json --plugin none --out ./out/html",
-    "examples:md": "typedoc --tsconfig ./test/stubs/tsconfig.json --options ./test/options.json --out ./out/md"
+    "examples:md": "typedoc --tsconfig ./test/stubs/tsconfig.json --options ./test/options.json --out ./out/md",
+    "prepare": "npm run build"
   },
   "author": "Thomas Grey",
   "license": "MIT",
