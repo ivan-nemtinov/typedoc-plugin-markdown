@@ -22,7 +22,10 @@ ___
 
 {{else}}
 
-{{heading 2}} {{title}}
+{{#if (and  
+        (ne title "References")
+        (ne title "Globals"))}}
+{{#replace "Variables" "Globals"}}{{heading 2}} {{title}}{{/replace}}
 
 {{#each children}}
 
@@ -34,4 +37,5 @@ ___
 
 {{/each}}
 
+{{/if}}
 {{/if}}
